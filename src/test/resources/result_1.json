@@ -1,0 +1,13 @@
+{ 
+	"deployment-name" : "undefined", 
+	"driver-class-name" : "undefined", 
+	"driver-datasource-class-name" : "undefined", 
+	"driver-major-version" : "undefined", 
+	"driver-minor-version" : "undefined", 
+	"driver-module-name" : "com.h2database.h2", 
+	"driver-name" : "h2", 
+	"driver-xa-datasource-class-name" : "org.h2.jdbcx.JdbcDataSource", 
+	"jdbc-compliant" : "undefined", 
+	"module-slot" : "undefined", 
+	"xa-datasource-class" : "undefined" 
+}

@@ -1,0 +1,9 @@
+{
+		"name"           : "ReferenciaNegocioDS",
+        "driver-name"    : "oracle",
+        "connection-url" : "jdbc:oracle:thin:@//uxrjo097:1526/ddf1",
+        "jndi-name"      : "java:jboss/datasources/ReferenciaNegocioDS",
+        "user-name"      : "ref-user",
+        "password"       : "ref-user00",
+}        
+    
