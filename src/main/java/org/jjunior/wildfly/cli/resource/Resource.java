@@ -39,5 +39,27 @@ public class Resource {
 		}
 		
 	}
+	
+	public int verifyOnly(String path, String params) throws Exception {
+		int exitCode = 0;
+		
+		ModelNode changeRequest = ModelNode.fromJSONString(params);
+		
+		ModelNode readRequest = ctx.buildRequest(String.format("%s:%s", path, ClientConstants.READ_RESOURCE_OPERATION));
+		ModelNode response = client.execute(readRequest);
+		
+		ExtendedModelNode extendedResponse = new ExtendedModelNode(response);
+		
+		if (extendedResponse.isSuccessOutcome()) {
+			if (ResourceUtil.diff(extendedResponse.getResult(), changeRequest)) {
+				exitCode = 1;
+			}
+			
+		} else {
+			exitCode = 1;
+		}
+		
+		return exitCode;
+	}
 
 }

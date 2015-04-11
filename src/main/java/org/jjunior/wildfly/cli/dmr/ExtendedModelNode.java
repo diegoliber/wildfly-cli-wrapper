@@ -16,4 +16,8 @@ public class ExtendedModelNode {
 		return outcome.asString().equals((ClientConstants.SUCCESS));
 	}
 	
+	public ModelNode getResult() {
+		return modelNode.get(ClientConstants.RESULT);
+	}
+	
 }

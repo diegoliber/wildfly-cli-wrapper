@@ -17,10 +17,18 @@ public class Main {
 		
 		String path = args[0];
 		String params = args[1];
+		boolean verifyOnly = args.length > 2 && args[2].equals("--verify-only");
 		
-		new Resource(ctx, client).ensure(path, params);
+		Resource resource = new Resource(ctx, client);
 		
-		System.exit(0);
+		if (verifyOnly) {
+			int status = resource.verifyOnly(path, params);
+			System.exit(status);
+		} else {
+			resource.ensure(path, params);
+			System.exit(0);
+		}
+		
 	}
 
 }
